@@ -25,9 +25,9 @@ const TodoList = () => {
   };
 
   const fourthEvent = (id) => {
-    const yeniDizi = newItem.filter((item) => item.id != id);
-    setNewItem(yeniDizi);
-    // localStorage.setNewItem(yeniDizi);
+    const x = newItem.filter((item) => item.id != id);
+    setNewItem(x);
+    // localStorage.setNewItem(x);
   };
 
   return (
@@ -51,7 +51,11 @@ const TodoList = () => {
             return (
               <li>
                 {val}
-                <Button className="delBtn" onClick={fourthEvent} key={item.id}>
+                <Button
+                  className="delBtn"
+                  onClick={() => fourthEvent}
+                  key={item.id}
+                >
                   <DeleteIcon />
                   Delete
                 </Button>
