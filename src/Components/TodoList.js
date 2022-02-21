@@ -3,9 +3,13 @@ import Button from "@material-ui/core/Button";
 import AddIcon from "@material-ui/icons/Add";
 import DeleteIcon from "@material-ui/icons/Delete";
 import "./assets/style.css";
+import { useStore } from "../store/notes";
 
 const TodoList = (props) => {
-  const { id } = props;
+  //const { noteState } = useStore();
+  // const { note } = noteState;
+
+  // const { id } = props;
 
   const [item, setItem] = useState("");
   const [newItem, setNewItem] = useState([]);
