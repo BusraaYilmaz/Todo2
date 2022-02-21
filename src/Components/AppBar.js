@@ -15,9 +15,9 @@ export default function FirstAppBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="inherit">
-        <Toolbar variant="dense">
-          <Typography variant="h5" color="primary">
+      <AppBar position="static" color="white">
+        <Toolbar>
+          <Typography variant="h5" color="secondary">
             My Notes
           </Typography>
         </Toolbar>
