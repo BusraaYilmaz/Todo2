@@ -5,10 +5,10 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import "./assets/style.css";
 
 const TodoList = (props) => {
+  const { id } = props;
+
   const [item, setItem] = useState("");
   const [newItem, setNewItem] = useState([]);
-
-  const { id, note, deletee } = props;
 
   const firstEvent = (e) => {
     setItem(e.target.value);
@@ -18,8 +18,7 @@ const TodoList = (props) => {
     setNewItem((prev) => {
       return [...prev, item];
     });
-
-    setItem("");
+    localStorage.setItem("");
   };
 
   const thirdEvent = () => {
@@ -27,9 +26,9 @@ const TodoList = (props) => {
   };
 
   const fourthEvent = (id) => {
-    const x = newItem.filter((props) => props.id != id);
+    console.log(id);
+    const x = newItem.filter((val) => val != id);
     setNewItem(x);
-    // localStorage.setNewItem(x);
   };
 
   return (
@@ -40,7 +39,7 @@ const TodoList = (props) => {
         <input
           type="text"
           value={item}
-          placeholder="Add a task"
+          placeholder="Enter your note"
           onChange={firstEvent}
         />
         <Button className="AddBtn" onClick={secondEvent}>
@@ -53,9 +52,8 @@ const TodoList = (props) => {
             return (
               <li>
                 {val}
-                <Button className="delBtn" onClick={() => fourthEvent(id)}>
+                <Button className="delBtn" onClick={(e) => fourthEvent(val)}>
                   <DeleteIcon />
-                  Delete
                 </Button>
               </li>
             );
